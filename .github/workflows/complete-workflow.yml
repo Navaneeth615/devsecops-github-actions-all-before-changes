@@ -7,19 +7,6 @@ jobs:
     name: Run unit tests and SAST scan on the source code 
     steps:
     - uses: actions/checkout@v3
-      with:
-        ref: master
-        repository: Navaneeth615/devsecops-github-actions-all-before-changes
-        token: ${{ secrets.GITHUB_TOKEN }}
-        ssh-strict: true
-        persist-credentials: true
-        clean: true
-        sparse-checkout-cone-mode: true
-        fetch-depth: 0  # Fetch all history
-        fetch-tags: false
-        lfs: false
-        submodules: false
-        set-safe-directory: true
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
